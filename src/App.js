@@ -8,13 +8,19 @@ class App extends Component {
   constructor(props) {
     super(props)
 
+
+
     this.state={
       flowers : []
     }
   }
 
   componentDidMount() {
+
+
     this.populateFlowers()
+
+
   }
 
   populateFlowers () {
@@ -22,20 +28,24 @@ class App extends Component {
     .then((response) => response.json())
     .then((json) => {
 
-      console.log(json)
+
 
       this.setState({
         flowers : json
-      })
+      }, () => this.forceUpdate())
+
     })
+
   }
+
+
 
   render() {
     return (
       <div>
         <h1>Flowers!</h1>
 
-        <FlowerList flowerList={this.state.flowers}/>
+        <FlowerList flowerList={this.state.flowers} />
 
       </div>
 
