@@ -1,12 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {Menu} from './components/Menu'
+import {FlowerList} from './components/FlowerList'
 
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state={
+      flowers : []
+    }
+  }
+
+  componentDidMount() {
+    this.populateFlowers()
+  }
+
+  populateFlowers () {
+    fetch("https://flowers.vapor.cloud/flowers")
+    .then((response) => response.json())
+    .then((json) => {
+
+      this.setState({
+        flowers : json
+      })
+    })
+  }
+
   render() {
     return (
-      <div>Flowers</div>
+      <FlowerList />
     );
   }
 }
