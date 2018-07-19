@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {FlowerList} from './components/FlowerList'
+import './Styles.css'
 
 class App extends Component {
 
@@ -21,6 +22,8 @@ class App extends Component {
     .then((response) => response.json())
     .then((json) => {
 
+      console.log(json)
+
       this.setState({
         flowers : json
       })
@@ -29,7 +32,13 @@ class App extends Component {
 
   render() {
     return (
-      <FlowerList />
+      <div>
+        <h1>Flowers!</h1>
+
+        <FlowerList flowerList={this.state.flowers}/>
+
+      </div>
+
     );
   }
 }

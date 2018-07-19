@@ -1,0 +1,48 @@
+#menu {
+  background-color: red;
+  color: white;
+  display: flex;
+}
+
+#menu div {
+  padding: 10px;
+}
+
+.active {
+  color: purple;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+#flowerImage {
+  height: 180px;
+  width: 220px;
+}
+
+li {
+  list-style: none;
+  border: 2px solid black;
+  vertical-align: middle;
+  margin-right: 45px;
+}
+
+li img {
+  padding: 20px;
+  margin-left: 245px;
+
+}
+
+h2 {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+p{
+  text-align: center;
+}
