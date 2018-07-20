@@ -17,9 +17,7 @@ class App extends Component {
 
   componentDidMount() {
 
-
     this.populateFlowers()
-
 
   }
 
@@ -32,7 +30,7 @@ class App extends Component {
 
       this.setState({
         flowers : json
-      }, () => this.forceUpdate())
+      })
 
     })
 

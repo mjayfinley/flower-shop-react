@@ -21,6 +21,8 @@ export class AddFlower extends Component {
 
     this.addFlower(flower)
 
+    //this.props.history.push('/')
+
 
   })
 
@@ -31,10 +33,11 @@ export class AddFlower extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(flower)
-    }).then(function(response) {
-      return response.json()
-    }).then(function(json) {
-      
+    }).then((response) => response.json())
+    .then((json) => {
+
+       
+      this.props.history.push('/')
 
     })
   }
